@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformManyBlocks", "Tran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BufferBlockExample", "BufferBlockExample\BufferBlockExample.csproj", "{09378BEF-5CA9-4D9E-8233-AF11E74F823B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroadcastBlockExample", "BroadcastBlockExample\BroadcastBlockExample.csproj", "{59DC1F74-A867-4315-BAFD-62BA6FE166A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{09378BEF-5CA9-4D9E-8233-AF11E74F823B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09378BEF-5CA9-4D9E-8233-AF11E74F823B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09378BEF-5CA9-4D9E-8233-AF11E74F823B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DC1F74-A867-4315-BAFD-62BA6FE166A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DC1F74-A867-4315-BAFD-62BA6FE166A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DC1F74-A867-4315-BAFD-62BA6FE166A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DC1F74-A867-4315-BAFD-62BA6FE166A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
