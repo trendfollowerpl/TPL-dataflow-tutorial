@@ -13,22 +13,31 @@ namespace JoinBlock
                     new DataflowBlockOptions() { BoundedCapacity = 1 }
                 );
 
-            var a1 = new ActionBlock<int>(
+            var a1 = new TransformBlock<int, int>(
                 a =>
                 {
                     Console.WriteLine($"Message {a} was processed by consumer 1");
                     Task.Delay(100).Wait();
+                    return a;
                 });
 
-            var a2 = new ActionBlock<int>(
+            var a2 = new TransformBlock<int, int>(
                 a =>
                 {
                     Console.WriteLine($"Message {a} was processed by consumer 2");
                     Task.Delay(100).Wait();
+                    return a;
                 });
 
             broadcastBlock.LinkTo(a1);
             broadcastBlock.LinkTo(a2);
+
+            var joinblock = new JoinBlock<int, int>();
+            a1.LinkTo(joinblock.Target1);
+            a2.LinkTo(joinblock.Target2);
+
+            var printBlock = new ActionBlock<Tuple<int,int>>(a => Console.WriteLine($"Message {a} was processed"));
+            joinblock.LinkTo(printBlock);
 
             for (int i = 0; i < 10; i++)
             {
