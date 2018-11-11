@@ -22,8 +22,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceBlockExample", "WriteOnceBlockExample\WriteOnceBlockExample.csproj", "{03E75BA0-4A64-4F87-9A4E-40E13A043C7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletionExample", "CompletionExample\CompletionExample.csproj", "{96D16992-5BB4-445F-B99C-AB421B0BD12C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A89329E5-34AB-4AD1-9E11-FE5799103B0D} = {A89329E5-34AB-4AD1-9E11-FE5799103B0D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithPropagation", "LitkToWithPropagation\LinkToWithPropagation.csproj", "{A89329E5-34AB-4AD1-9E11-FE5799103B0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{7A99C1EC-6D4B-4174-9B42-85F66779B271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +83,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A89329E5-34AB-4AD1-9E11-FE5799103B0D} = {7A99C1EC-6D4B-4174-9B42-85F66779B271}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {707B16F5-1FEE-40A5-A69E-994273690E93}

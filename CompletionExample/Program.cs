@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using LinkToWithPropagation;
 
 namespace CompletionExample
 {
@@ -43,17 +44,17 @@ namespace CompletionExample
                     return a;
                 }, new ExecutionDataflowBlockOptions() { MaxDegreeOfParallelism = 3 });
 
-            broadcastBlock.LinkTo(a1, new DataflowLinkOptions { PropagateCompletion = true });
-            broadcastBlock.LinkTo(a2, new DataflowLinkOptions { PropagateCompletion = true });
+            broadcastBlock.LinkToWithPropagation(a1);
+            broadcastBlock.LinkToWithPropagation(a2);
 
             var joinblock = new JoinBlock<int, int>();
-            a1.LinkTo(joinblock.Target1, new DataflowLinkOptions { PropagateCompletion = true });
-            a2.LinkTo(joinblock.Target2, new DataflowLinkOptions { PropagateCompletion = true });
+            a1.LinkToWithPropagation(joinblock.Target1);
+            a2.LinkToWithPropagation(joinblock.Target2);
 
             var printBlock = new ActionBlock<Tuple<int, int>>(
                 a => Console.WriteLine($"Message {a} was processed. Sum: {a.Item1 + a.Item2}")
                 );
-            joinblock.LinkTo(printBlock, new DataflowLinkOptions { PropagateCompletion = true });
+            joinblock.LinkToWithPropagation(printBlock);
 
             for (int i = 0; i < 10; i++)
             {
