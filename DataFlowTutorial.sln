@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithPropagation", "Li
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{7A99C1EC-6D4B-4174-9B42-85F66779B271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithAppendExample", "LinkToWithAppendExample\LinkToWithAppendExample.csproj", "{0328320F-80DE-435B-826C-79C6CFA398D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{A89329E5-34AB-4AD1-9E11-FE5799103B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A89329E5-34AB-4AD1-9E11-FE5799103B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A89329E5-34AB-4AD1-9E11-FE5799103B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0328320F-80DE-435B-826C-79C6CFA398D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0328320F-80DE-435B-826C-79C6CFA398D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0328320F-80DE-435B-826C-79C6CFA398D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0328320F-80DE-435B-826C-79C6CFA398D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
