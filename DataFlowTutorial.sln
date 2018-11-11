@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BroadcastBlockExample", "Br
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoinBlock", "JoinBlock\JoinBlock.csproj", "{5750A9C4-E653-4116-BEFB-62F685BFD08B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchedJoinblockExample", "BatchedJoinblockExample\BatchedJoinblockExample.csproj", "{2CE7036D-4D44-43C2-BC3E-8A511AD55D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatchedJoinblockExample", "BatchedJoinblockExample\BatchedJoinblockExample.csproj", "{2CE7036D-4D44-43C2-BC3E-8A511AD55D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteOnceBlockExample", "WriteOnceBlockExample\WriteOnceBlockExample.csproj", "{03E75BA0-4A64-4F87-9A4E-40E13A043C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteOnceBlockExample", "WriteOnceBlockExample\WriteOnceBlockExample.csproj", "{03E75BA0-4A64-4F87-9A4E-40E13A043C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletionExample", "CompletionExample\CompletionExample.csproj", "{96D16992-5BB4-445F-B99C-AB421B0BD12C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{03E75BA0-4A64-4F87-9A4E-40E13A043C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03E75BA0-4A64-4F87-9A4E-40E13A043C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03E75BA0-4A64-4F87-9A4E-40E13A043C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D16992-5BB4-445F-B99C-AB421B0BD12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D16992-5BB4-445F-B99C-AB421B0BD12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D16992-5BB4-445F-B99C-AB421B0BD12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D16992-5BB4-445F-B99C-AB421B0BD12C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
