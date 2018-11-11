@@ -24,7 +24,7 @@ namespace LinkToWithAppendExample
                 });
 
             bufferBlock.LinkTo(a1);
-            bufferBlock.LinkTo(a2);
+            bufferBlock.LinkTo(a2, new DataflowLinkOptions { Append = false });
 
             for (int i = 0; i < 10; i++)
             {
