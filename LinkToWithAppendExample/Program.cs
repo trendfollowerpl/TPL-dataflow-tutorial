@@ -6,7 +6,7 @@ namespace LinkToWithAppendExample
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var bufferBlock = new BufferBlock<int>(new DataflowBlockOptions() { BoundedCapacity = 1 });
             var a1 = new ActionBlock<int>(
@@ -28,12 +28,7 @@ namespace LinkToWithAppendExample
 
             for (int i = 0; i < 10; i++)
             {
-                var i1 = i;
-                bufferBlock.SendAsync(i)
-                    .ContinueWith(a =>
-                    {
-                        Console.WriteLine(a.Result ? $"Messgae {i1} was accepted" : $"Messgae {i1} was rejected");
-                    });
+                await bufferBlock.SendAsync(i);
             }
 
             Console.WriteLine("done");
