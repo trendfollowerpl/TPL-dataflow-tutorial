@@ -43,23 +43,26 @@ namespace CompletionExample
                     return a;
                 }, new ExecutionDataflowBlockOptions() { MaxDegreeOfParallelism = 3 });
 
-            broadcastBlock.LinkTo(a1);
-            broadcastBlock.LinkTo(a2);
+            broadcastBlock.LinkTo(a1, new DataflowLinkOptions { PropagateCompletion = true });
+            broadcastBlock.LinkTo(a2, new DataflowLinkOptions { PropagateCompletion = true });
 
             var joinblock = new JoinBlock<int, int>();
-            a1.LinkTo(joinblock.Target1);
-            a2.LinkTo(joinblock.Target2);
+            a1.LinkTo(joinblock.Target1, new DataflowLinkOptions { PropagateCompletion = true });
+            a2.LinkTo(joinblock.Target2, new DataflowLinkOptions { PropagateCompletion = true });
 
             var printBlock = new ActionBlock<Tuple<int, int>>(
                 a => Console.WriteLine($"Message {a} was processed. Sum: {a.Item1 + a.Item2}")
                 );
-            joinblock.LinkTo(printBlock);
+            joinblock.LinkTo(printBlock, new DataflowLinkOptions { PropagateCompletion = true });
 
             for (int i = 0; i < 10; i++)
             {
                 await broadcastBlock.SendAsync(i);
             }
 
+            broadcastBlock.Completion.ContinueWith(a => Console.WriteLine("broadcastBlock completed"));
+            broadcastBlock.Complete();
+            await printBlock.Completion;
             Console.WriteLine("done");
         }
     }
