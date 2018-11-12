@@ -17,7 +17,7 @@ namespace MultipleProducersExample
 
             var producer2 = new TransformBlock<string, string>(n =>
             {
-               // Task.Delay(500).Wait();
+                Task.Delay(500).Wait();
                 return n;
             });
 
