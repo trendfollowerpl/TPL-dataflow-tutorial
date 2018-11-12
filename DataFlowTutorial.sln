@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithMaxMessagesExampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithMessageFilteringExample", "LinkToWithMessageFilteringExample\LinkToWithMessageFilteringExample.csproj", "{484EDC24-D87C-4C7A-87EC-1440F2768D93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleProducersExample", "MultipleProducersExample\MultipleProducersExample.csproj", "{C96AA945-DD35-4BCF-BB40-99CD59E7E043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96AA945-DD35-4BCF-BB40-99CD59E7E043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96AA945-DD35-4BCF-BB40-99CD59E7E043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96AA945-DD35-4BCF-BB40-99CD59E7E043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96AA945-DD35-4BCF-BB40-99CD59E7E043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
