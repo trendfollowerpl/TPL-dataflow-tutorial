@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkToWithAppendExample", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithMaxMessagesExample", "LinkToWithMaxMessagesExample\LinkToWithMaxMessagesExample.csproj", "{62E3B05F-47B0-4B83-8704-AB6ECCF86B71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkToWithMessageFilteringExample", "LinkToWithMessageFilteringExample\LinkToWithMessageFilteringExample.csproj", "{484EDC24-D87C-4C7A-87EC-1440F2768D93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +94,10 @@ Global
 		{62E3B05F-47B0-4B83-8704-AB6ECCF86B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E3B05F-47B0-4B83-8704-AB6ECCF86B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E3B05F-47B0-4B83-8704-AB6ECCF86B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484EDC24-D87C-4C7A-87EC-1440F2768D93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
