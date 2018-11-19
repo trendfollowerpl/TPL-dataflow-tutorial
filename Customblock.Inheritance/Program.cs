@@ -10,7 +10,7 @@ namespace Customblock.Inheritance
         static async Task Main(string[] args)
         {
             var broadcastBlock =
-                new BroadcastBlock<int>(a => a);
+                new GuarantededDeliveryBroadcastBlock<int>(a => a);
 
             var a1 = new ActionBlock<int>(
                 a =>
@@ -40,6 +40,77 @@ namespace Customblock.Inheritance
 
             Console.WriteLine("done");
             Console.ReadLine();
+        }
+    }
+
+    class GuarantededDeliveryBroadcastBlock<T> : IPropagatorBlock<T, T>
+    {
+        private BroadcastBlock<T> _broadcastBlock;
+        private Task _completion;
+
+        public GuarantededDeliveryBroadcastBlock(Func<T, T> cloningFunc)
+        {
+            _broadcastBlock = new BroadcastBlock<T>(cloningFunc);
+            _completion = _broadcastBlock.Completion;
+        }
+
+        public DataflowMessageStatus OfferMessage(DataflowMessageHeader messageHeader, T messageValue, ISourceBlock<T> source,
+            bool consumeToAccept)
+        {
+            return ((ITargetBlock<T>)_broadcastBlock).OfferMessage(messageHeader, messageValue, source, consumeToAccept);
+        }
+
+        public void Complete()
+        {
+            _broadcastBlock.Complete();
+        }
+
+        public void Fault(Exception exception)
+        {
+            ((ITargetBlock<T>)_broadcastBlock).Fault(exception);
+        }
+
+        public Task Completion => _completion;
+        public T ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<T> target, out bool messageConsumed)
+        {
+            throw new NotSupportedException("producer is a buffer block");
+        }
+
+        public IDisposable LinkTo(ITargetBlock<T> target, DataflowLinkOptions linkOptions)
+        {
+            var bufferBlock = new BufferBlock<T>();
+            var l1 = _broadcastBlock.LinkTo(bufferBlock, linkOptions);
+            var l2 = bufferBlock.LinkTo(target, linkOptions);
+
+            _completion.ContinueWith(_ => bufferBlock.Completion);
+            return new DisposableDisposer(l1, l2);
+        }
+
+        public void ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<T> target)
+        {
+            throw new NotSupportedException("producer is a buffer block");
+        }
+
+        public bool ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<T> target)
+        {
+            throw new NotSupportedException("producer is a buffer block");
+        }
+    }
+
+    class DisposableDisposer : IDisposable
+    {
+        private readonly IDisposable[] _disposables;
+
+        public DisposableDisposer(params IDisposable[] disposables)
+        {
+            _disposables = disposables;
+        }
+        public void Dispose()
+        {
+            foreach (var disposable in _disposables)
+            {
+                disposable.Dispose();
+            }
         }
     }
 }
