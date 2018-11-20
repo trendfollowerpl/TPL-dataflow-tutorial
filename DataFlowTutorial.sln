@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customblock.Inheritance", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{14D7348D-EAD4-41BD-87A7-53B91E963FA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralPerformace", "GeneralPerformace\GeneralPerformace.csproj", "{2A37006B-682D-4192-8307-E5D1FA14EF51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,12 +126,17 @@ Global
 		{1E3DF6FF-154C-4A20-9B79-8D0BB2B7BB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E3DF6FF-154C-4A20-9B79-8D0BB2B7BB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E3DF6FF-154C-4A20-9B79-8D0BB2B7BB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A37006B-682D-4192-8307-E5D1FA14EF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A37006B-682D-4192-8307-E5D1FA14EF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A37006B-682D-4192-8307-E5D1FA14EF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A37006B-682D-4192-8307-E5D1FA14EF51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A89329E5-34AB-4AD1-9E11-FE5799103B0D} = {7A99C1EC-6D4B-4174-9B42-85F66779B271}
+		{2A37006B-682D-4192-8307-E5D1FA14EF51} = {14D7348D-EAD4-41BD-87A7-53B91E963FA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {707B16F5-1FEE-40A5-A69E-994273690E93}
