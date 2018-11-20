@@ -42,7 +42,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandlingExample", "Err
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomBlockEncapsulate", "CustomBlockEncapsulate\CustomBlockEncapsulate.csproj", "{0285F038-1A04-42D4-AC24-3C064B7C5FE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customblock.Inheritance", "Customblock.Inheritance\Customblock.Inheritance.csproj", "{1E3DF6FF-154C-4A20-9B79-8D0BB2B7BB22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customblock.Inheritance", "Customblock.Inheritance\Customblock.Inheritance.csproj", "{1E3DF6FF-154C-4A20-9B79-8D0BB2B7BB22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{14D7348D-EAD4-41BD-87A7-53B91E963FA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
