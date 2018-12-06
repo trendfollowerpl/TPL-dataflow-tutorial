@@ -10,17 +10,20 @@ namespace ConcurendExclusiveScheduller
         static int shared = 0;
         static async Task Main(string[] args)
         {
+            var scheduler = new ConcurrentExclusiveSchedulerPair();
             var inputBlock = new BroadcastBlock<int>(a => a);
+
             Action<int> actionBlockFunction = a =>
             {
                 var random = new Random();
                 int counterValue = GetSharedObjectValue();
                 Task.Delay(random.Next(300)).Wait();
+                Console.WriteLine($"counter value was{counterValue}, Now it is :{shared}, it will be set to : {counterValue + 1}");
                 SetSharedObjectValue(counterValue + 1);
             };
 
-            var incrementBlock1 = new ActionBlock<int>(actionBlockFunction);
-            var incrementBlock2 = new ActionBlock<int>(actionBlockFunction);
+            var incrementBlock1 = new ActionBlock<int>(actionBlockFunction, new ExecutionDataflowBlockOptions { TaskScheduler = scheduler.ExclusiveScheduler });
+            var incrementBlock2 = new ActionBlock<int>(actionBlockFunction, new ExecutionDataflowBlockOptions { TaskScheduler = scheduler.ExclusiveScheduler });
 
             inputBlock.LinkToWithPropagation(incrementBlock1);
             inputBlock.LinkToWithPropagation(incrementBlock2);
